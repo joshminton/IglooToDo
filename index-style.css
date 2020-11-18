@@ -58,9 +58,17 @@ input[type=text] {
     transition: box-shadow 0.25s;
 }
 
+.done {
+    opacity: 0.4;
+}
+
 .task:hover {
     opacity: 1;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.13);
+}
+
+.done:hover {
+    opacity: 0.6;
 }
 
 .checkbox {
@@ -103,4 +111,30 @@ h2 {
 
 p {
     font-family: Karla;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  color: grey;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
