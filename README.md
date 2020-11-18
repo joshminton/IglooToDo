@@ -1,6 +1,6 @@
 # IglooToDo
 
-My solution is a straightforward HTML/CSS/JavaScript site, as that's what I currently know. That's not exactly what you asked for so just acknowledging that straight away!
+My solution is a straightforward HTML/CSS/JavaScript site, as that's what I currently know.
 
 Items can be added, viewed, marked as 'done', and deleted.
 
