@@ -15,11 +15,12 @@
             <h1>Igloo To Do</h1>
         </header>
 
+        <div class="textEntry">
+            <input type="text" id="task">
+            <div class="addWrapper"><h2>ADD</h2></div>
+        </div>
+
         <div id="todoList">
-            <div class="textEntry">
-                <input type="text" id="task">
-                <div class="addWrapper"><h2>ADD</h2></div>
-            </div>
         </div>
     </body>
 
@@ -27,7 +28,7 @@
         <div class="task">
             <span class="checkbox"></span>
             <p class="taskText">Text here</p>
-            <i class="material-icons delete" onClick="this.parentNode.parentNode.removeChild(this.parentNode);">clear</i>
+            <i class="material-icons delete">clear</i>
             <!-- https://stackoverflow.com/a/33831979/3032936 for the delete function-->
         </div>
     </template>

@@ -1,13 +1,53 @@
 const todoList = document.querySelector('#todoList')
 
-// var todos = new Array();
+
+if (localStorage.getItem("todos") === null) {
+    var todos = new Array();
+} else {
+    var todos = JSON.parse(localStorage.getItem("todos"));
+}
+
+draw();
 
 const btn = document.querySelector('.addWrapper');
 btn.addEventListener('click', () => {
-    //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
-    var template = document.querySelector('#todoTemp');
-    var clone = template.content.firstElementChild.cloneNode(true);
-    clone.querySelector('.taskText').innerHTML = document.getElementById('task').value;
-    clone.querySelector('.checkbox').onclick = function() { this.parentNode.classList.toggle("done"); };
-    todoList.appendChild(clone);
+
+    var newTodo = {text:document.getElementById('task').value, done:false};
+
+    todos.push(newTodo)
+
+    draw();
 })
+
+function check(id){
+    if(todos[id].done){
+        todos[id].done = false;
+    } else {
+        todos[id].done = true;
+    }
+    draw();
+}
+
+function remove(id){
+    todos.splice(id, 1);
+    draw();
+}
+
+function draw(){
+    todoList.innerHTML=''
+
+    todos.forEach((item, i) => {
+        //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
+        var template = document.querySelector('#todoTemp');
+        var clone = template.content.firstElementChild.cloneNode(true);
+        clone.querySelector('.taskText').innerHTML = item.text;
+        clone.id = i;
+        if(item.done){
+            clone.classList.add("done");
+        }
+        clone.querySelector('.checkbox').onclick = function(){check(i);};
+        clone.querySelector('.delete').onclick = function(){remove(i);};
+        todoList.appendChild(clone);
+    });
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
