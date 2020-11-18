@@ -6,6 +6,7 @@
         <title>Igloo To Do</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i,700,700i,800,800i&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="index-style.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/styles.css?v=1.0">
@@ -15,18 +16,20 @@
             <h1>Igloo To Do</h1>
         </header>
 
-        <div class="textEntry">
-            <input type="text" id="task">
-            <div class="addWrapper"><h2>ADD</h2></div>
-        </div>
+        <div class="rest">
+            <div class="textEntry">
+                <input type="text" id="task">
+                <div class="addWrapper"><h2>ADD</h2></div>
+            </div>
 
-        <div id="todoList">
+            <div id="todoList">
+            </div>
         </div>
     </body>
 
     <template id="todoTemp">
         <div class="task">
-            <span class="checkbox"></span>
+            <i class="material-icons checkbox">check_box_outline_blank</i>
             <p class="taskText">Text here</p>
             <i class="material-icons delete">clear</i>
             <!-- https://stackoverflow.com/a/33831979/3032936 for the delete function-->

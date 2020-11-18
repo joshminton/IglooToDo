@@ -16,6 +16,8 @@ btn.addEventListener('click', () => {
 
     todos.push(newTodo)
 
+    document.getElementById('task').value = '';
+
     draw();
 })
 
@@ -44,6 +46,7 @@ function draw(){
         clone.id = i;
         if(item.done){
             clone.classList.add("done");
+            clone.firstElementChild.innerHTML = 'check_box';
         }
         clone.querySelector('.checkbox').onclick = function(){check(i);};
         clone.querySelector('.delete').onclick = function(){remove(i);};
